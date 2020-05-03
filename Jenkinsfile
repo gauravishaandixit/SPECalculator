@@ -9,7 +9,7 @@ pipeline
             steps
             {
                 echo 'Pulling the Maven Git repo'
-                git "https://github.com/gauravishaandixit/SPE_Calculator.git"
+                git "https://github.com/gauravishaandixit/SPECalculator.git"
             }
         }
 
