@@ -21,6 +21,7 @@
 
             </plugin>
         </plugins>
+        <finalName>SPECalculator</finalName>
     </build>
 
 </project>
