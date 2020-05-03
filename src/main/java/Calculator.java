@@ -104,9 +104,10 @@ public class Calculator {
 
     public static void main(String[] args)
     {
+        System.out.println("\n\nSPE Calculator Assignment\n");
         String infixExpression = "("+args[0]+")";
         System.out.println("\nThe expression that needs to be evaluated is:: "+infixExpression);
         Calculator calculator = new Calculator();
-        System.out.println("\nThe evaluated answer is:: "+calculator.evaluate(infixExpression)+"\n");
+        System.out.println("The evaluated answer is:: "+calculator.evaluate(infixExpression)+"\n");
     }
 }
