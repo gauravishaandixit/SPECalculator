@@ -19,27 +19,27 @@ pipeline
             }
         }
 
-        stage("Clean the maven project")
+        stage("Clean The Maven Project")
         {
             steps
             {
-                echo "Cleaning the project"
+                echo "Cleaning The Project"
                 sh " mvn clean"
             }
         }
-        stage("Package the maven project")
+        stage("Package The Maven Project")
         {
             steps
             {
-                echo "Packaging the project"
+                echo "Packaging The Project"
                 sh "mvn package"
             }
         }
-        stage("Install the project")
+        stage("Install The Project")
         {
             steps
             {
-                echo "Installing the project"
+                echo "Installing The Project"
                 sh "mvn install"
             }
         }
