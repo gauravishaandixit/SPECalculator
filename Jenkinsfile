@@ -14,7 +14,7 @@ pipeline
         {
             steps
             {
-                echo 'Pulling the Maven Git repo'
+                echo 'Pulling The Maven Git Repository'
                 git "https://github.com/gauravishaandixit/SPECalculator.git"
             }
         }
