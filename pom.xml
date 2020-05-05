@@ -10,15 +10,26 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
-                <configuration>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-compiler-plugin</artifactId>
+                  <version>3.7.0</version>
+                  <configuration>
                     <target>11</target>
                     <source>11</source>
                     <release>11</release>
-                </configuration>
-
+                  </configuration>
+            </plugin>
+            <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-jar-plugin</artifactId>
+                  <version>3.2.0</version>
+                  <configuration>
+                     <archive>
+                        <manifest>
+                           <mainClass>Calculator</mainClass>
+                        </manifest>
+                     </archive>
+                  </configuration>
             </plugin>
         </plugins>
         <finalName>SPECalculator</finalName>
