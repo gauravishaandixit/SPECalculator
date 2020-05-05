@@ -68,13 +68,13 @@ pipeline
                 }
             }
         }
-        stage('Remove Unused docker image')
+        /*stage('Remove Unused docker image')
         {
             steps
             {
                 sh "docker rmi $registry:$BUILD_NUMBER"
             }
-        }
+        }*/
         stage("Running the main Calculator file")
         {
             steps
