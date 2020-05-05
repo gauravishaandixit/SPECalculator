@@ -5,7 +5,7 @@ pipeline
         registry = "gauravishaandixit/spe_calculator"
         registryCredential = 'DockerHub'
         dockerImage = ''
-        //dockerImageLatest = ''
+        dockerImageLatest = ''
     }
     agent any
     stages
@@ -50,7 +50,7 @@ pipeline
                 script
                 {
                   dockerImage = docker.build registry + ":$BUILD_NUMBER"
-                  //dockerImageLatest = docker.build registry + ":latest"
+                  dockerImageLatest = docker.build registry + ":latest"
                 }
             }
         }
@@ -63,7 +63,7 @@ pipeline
                     docker.withRegistry( '', registryCredential )
                     {
                         dockerImage.push()
-                        //dockerImageLatest.push()
+                        dockerImageLatest.push()
                     }
                 }
             }
