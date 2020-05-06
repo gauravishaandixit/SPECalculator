@@ -7,18 +7,13 @@
     <groupId>spe_assignment</groupId>
     <artifactId>calculator</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <junit.jupiter.version>5.4.0</junit.jupiter.version>
+    </properties>
     <build>
         <plugins>
-            <plugin>
-                  <groupId>org.apache.maven.plugins</groupId>
-                  <artifactId>maven-compiler-plugin</artifactId>
-                  <version>3.7.0</version>
-                  <configuration>
-                    <target>11</target>
-                    <source>11</source>
-                    <release>11</release>
-                  </configuration>
-            </plugin>
             <plugin>
                   <groupId>org.apache.maven.plugins</groupId>
                   <artifactId>maven-jar-plugin</artifactId>
@@ -34,5 +29,18 @@
         </plugins>
         <finalName>SPECalculator</finalName>
     </build>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>

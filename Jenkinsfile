@@ -10,7 +10,7 @@ pipeline
     agent any
     stages
     {
-        stage('Git-Checkout')
+        stage('Pull The GitHub Repository')
         {
             steps
             {
@@ -19,7 +19,7 @@ pipeline
             }
         }
 
-        stage("Clean The Maven Project")
+        stage("mvn clean")
         {
             steps
             {
@@ -27,7 +27,15 @@ pipeline
                 sh " mvn clean"
             }
         }
-        stage("Package The Maven Project")
+        stage("mvn test")
+        {
+            steps
+            {
+                echo "Testing The Project"
+                sh "mvn test"
+            }
+        }
+        stage("mvn package")
         {
             steps
             {
@@ -35,7 +43,7 @@ pipeline
                 sh "mvn package"
             }
         }
-        stage("Install The Project")
+        stage("mvn install")
         {
             steps
             {
