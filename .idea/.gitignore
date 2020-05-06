@@ -3,3 +3,4 @@
 /target/
 /.idea/
 SPE_Calculator.yml
+/target/*
