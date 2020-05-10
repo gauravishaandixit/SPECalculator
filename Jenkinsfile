@@ -4,8 +4,8 @@ pipeline
     {
         registry = "gauravishaandixit/spe_calculator"
         registryCredential = 'DockerHub'
-        dockerImage = ''
-        //dockerImageLatest = ''
+        //dockerImage = ''
+        dockerImageLatest = ''
     }
     agent any
     stages
@@ -57,8 +57,8 @@ pipeline
             {
                 script
                 {
-                  dockerImage = docker.build registry + ":$BUILD_NUMBER"
-                  //dockerImageLatest = docker.build registry + ":latest"
+                  //dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                  dockerImageLatest = docker.build registry + ":latest"
                 }
             }
         }
@@ -70,8 +70,8 @@ pipeline
                 {
                     docker.withRegistry( '', registryCredential )
                     {
-                        dockerImage.push()
-                        //dockerImageLatest.push()
+                        //dockerImage.push()
+                        dockerImageLatest.push()
                     }
                 }
             }
@@ -89,6 +89,22 @@ pipeline
             {
                 echo "Run the Calculator"
                 sh "java -cp target/SPECalculator.jar Calculator 3+5*7/3"
+            }
+        }
+        stage('Execute Rundeck job')
+        {
+            steps 
+            {
+              script 
+                  {
+                    step([$class: "RundeckNotifier",
+                          includeRundeckLogs: true,
+                          jobId: "d62f2f45-7d8b-4102-9dd8-7a33675fffeb",
+                          rundeckInstance: "Rundeck",
+                          shouldFailTheBuild: true,
+                          shouldWaitForRundeckJob: true,
+                          tailLog: true])
+                  }
             }
         }
     }
